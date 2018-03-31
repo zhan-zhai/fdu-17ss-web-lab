@@ -1,0 +1,161 @@
+/* reset browser styles */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol {
+    padding-left: 1.4em;
+    list-style: decimal;
+}
+ul {
+    padding-left: 1.4em;
+    list-style: square;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* end reset browser styles */
+body{
+    min-width: 660px;
+    background-color: #C5CAE9;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+article{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    background-color: white;
+}
+nav{
+    padding-left: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    background-color: #3F51B5;
+}
+nav a{
+    padding: 0.3em;
+    color: #00B0FF;
+}
+nav a:hover{
+    color: white;
+    background-color: #F50057;
+}
+a{
+    color: #00B0FF;
+}
+.header{
+    margin-top: -0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    background-color: #1A237E;
+}
+div,footer{
+    box-sizing: border-box;
+    border:solid 1px #C5CAE9;
+}
+
+.div1{
+    margin-bottom: 0.5em;
+}
+.div2{
+     margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: white;
+}
+.div3{
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: white;
+}
+.div4{
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    background-color: white;
+}
+.logos{
+     text-align: right;
+     padding-top: 0;
+     padding-right: 1em;
+     padding-bottom: 0.5em;
+ }
+.art{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+}
+.imgs{
+    margin-bottom: -0.3em;
+}
+footer{
+    padding-bottom: 1.3em;
+    background-color: #1A237E;
+    margin-top: 0.5em;
+}
+#h1{
+    font-size: 1.5em;
+    color: #E8EAF6;
+}
+h2{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    color: #E8EAF6;
+    background-color: #7986CB;
+}
+
+#fig{
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #C5CAE9;
+}
+#introduction{
+    padding: 0.5em 1em 1em 1em;
+}
+#picture1{
+    padding-left: 0;
+    padding-right: 0;
+    visibility: hidden;
+}
+#observe1,#observe2{
+    padding-bottom: 0.5em;
+    color: #C5CAE9;
+    font-style: italic;
+}
+data{
+    color: #F5A2C1;
+}
+article.art hr{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.footer1{
+    color: white;
+    padding-top: 1.3em;
+    padding-left: 1em;
+    padding-bottom: 0.6em;
+}
+#Logo,#footer2 {
+     color: #E8EAF6;
+ }
+#footer2{
+
+    padding-left: 1em;
+}
+#bg{
+    background-image: url("风景1.jpg");
+    background-size: 100%,100%;
+    background-position: 50%,50%;
+}

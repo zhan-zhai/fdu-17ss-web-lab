@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab4</title>
+    <link rel="stylesheet" href="lab4%20style.css">
+</head>
+
+<body>
+<header>
+    <h1>Share Your Travels</h1>
+    <p>let us know where you've been</p>
+</header>
+<form>
+    <main>
+        <section>
+            <fieldset>
+                <legend>PHOTO DETAILS</legend>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <p>Title</p>
+                            <input type="text" name="title" placeholder="Give your photo a descriptive name"><br>
+                            <p>Description</p>
+                            <textarea name="description" placeholder="Adding a rich description will hep with search results"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <p>Continent</p>
+                            <select title="continent">
+                                <option value="Choose continent" selected>Choose continent</option>
+                            </select><br>
+                            <p>Country</p>
+                            <select title="country">
+                                <option value="choose country" selected>Choose country</option>
+                            </select><br>
+                            <p>City</p>
+                            <input type="text" name="city" placeholder="">
+                        </td>
+                        <td>
+                            <div class="copyright">
+                                <p>Copyright?</p>
+                                <input type="radio" name="copyright" value="All right reserved" placeholder="">All right reserved<br>
+                                <input type="radio" name="copyright" value="Creative Commons" checked placeholder="">Creative Commons
+                            </div>
+                            <div class="creativeCommonsTypes">
+                                <p>Creative Commons Types</p>
+                                <input type="checkbox" name="type" value="Attribution" placeholder="">Attribution<br>
+                                <input type="checkbox" name="type" value="Noncommercial" placeholder="">Noncommercial<br>
+                                <input type="checkbox" name="type" value="No Derivative Works" placeholder="">No Derivative Works
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="box">
+                        <td  colspan="2"><p class="rectangle">I accept the software license<input type="checkbox" name="empty"></p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Rate this photo：</p>
+                            <input type="number" name="empty" placeholder=""><br>
+                            <p>Color Collection</p>
+                            <input type="color" name="colorCollection" value="black">
+                        </td>
+                        <td>
+                            <div class="data">
+                                <p>Data Taken:</p>
+                                <input type="date"><br>
+                                <p>Time Taken:</p>
+                                <input type="time">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="box">
+                        <td  colspan="2">
+                            <p class="rectangle">
+                                <input type="submit" value="提交">
+                                <input type="reset" value="Clear Form">
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+    </main>
+</form>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>lab5</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="container">
+<header class="row ">
+    <div class="col-sm-4">
+        <h1 class="text-center">Share Your Travels</h1>
+        <p class="font-italic text-center">let us know where you've been</p>
+    </div>
+    <nav class="col-sm navbar navbar-expand-sm navbar-light justify-content-around">
+        <ul class="nav w-75 text-center justify-content-around">
+            <li class="nav-item">
+                <a class="nav-link Gallery" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link Feeding lucky" href="">Feeding Lucky</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link User" href="">User</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="border p-4">
+    <form>
+        <h2>PHOTO DETAILS</h2>
+
+        <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Give your photo a descriptive name"><br>
+            <label for="inputDescription">Description</label>
+            <textarea class="form-control" id="inputDescription" placeholder="Adding a rich description will hep with search results"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectCont">Continent</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectCont">
+                <option value="Choose continent" selected>Choose continent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectCount">Country</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectCount">
+                <option value="choose country" selected>Choose country</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+        </div>
+
+        <div class="form-group">
+            Copyright?<br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="copyright" id="radio1" value="option1" checked>
+                <label class="form-check-label" for="radio1">All right reserved</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="copyright" id="radio2" value="option2">
+                <label class="form-check-label" for="radio2">Creative Commons</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            Creative Commons Types<br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="type" value="Attribution" id="inlineCheckbox1">
+                <label class="form-check-label" for="inlineCheckbox1">Attribution</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="type" value="Noncommercial" id="inlineCheckbox2">
+                <label class="form-check-label" for="inlineCheckbox2">Noncommercial</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="type" value="No Derivative Works" id="inlineCheckbox3">
+                <label class="form-check-label" for="inlineCheckbox3">No Derivative Works</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">I accept the software license</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-3 form-group">
+                <label for="inputRate">Rate this photo：</label>
+                <input class="form-control" type="number" id="inputRate">
+            </div>
+            <div class="col"></div>
+            <div class="col-sm-8 form-group">
+                <label for="inputColor">Color Collection：</label>
+                <input class="form-control" type="text" id="inputColor">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-6 form-group">
+                <label for="inputDate">Data Taken:</label>
+                <input class="form-control" type="date" id="inputDate">
+            </div>
+            <div class="col"></div>
+            <div class="col-sm-5 form-group justify-content-end">
+                <label for="inputTime">Time Taken:</label>
+                <input class="form-control" type="time" id="inputTime">
+            </div>
+        </div>
+
+        <div class="btn-group" role="group">
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </div>
+
+    </form>
+</main>
+
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+</html>

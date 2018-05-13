@@ -1,0 +1,45 @@
+form{
+    text-align: center;
+}
+select{
+    width: 300px;
+}
+#bt{
+    margin: 0 auto;
+    width: 300px;
+    background-color: white;
+    display: none;
+}
+tr:nth-child(odd){
+    background-color: lightgray;
+}
+.th{
+    background-color: gray;
+    color: whitesmoke;
+    width: 100px;
+    height: 30px;
+    vertical-align: center;
+}
+.td{
+    width: 100px;
+    height: 30px;
+    vertical-align: center;
+    padding: 0 0.5em;
+}
+/*.oddRow{*/
+    /*width: 100px;*/
+    /*height: 30px;*/
+    /*vertical-align: center;*/
+    /*padding: 0 0.5em;*/
+ /**/
+/*}*/
+#table{
+    border: 0;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.input{
+    margin: 0.5em ;
+    width: 150px;
+}

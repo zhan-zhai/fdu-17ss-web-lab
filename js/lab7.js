@@ -106,23 +106,31 @@ function addRow() {
 }
 
 function commitRow() {
-    for(let i = 0;i < tableName.length;i ++) {
-        if (select2.options[select2.selectedIndex].text === tableName[i]) {
-            index = i;
-            let rowDiv = document.createElement("tr");
-            for (let i = 0; i < tableAttr[index].children.length; i++) {
-                let td = document.createElement("td");
-                td.className = "td";
-                td.innerHTML = div1.children[i].value;
-                rowDiv.appendChild(td);
-                rowEle.push(td);
-            }
-            rowAttr[index].push(rowEle);
-            rowEle = [];
-            table.appendChild(rowDiv);
+    let empty = false;
+    for(let x = 0;x < div1.children.length;x ++){
 
+        empty = empty || (div1.children[x].value !== "");
+    }
+    if(empty){
+        for(let i = 0;i < tableName.length;i ++) {
+            if (select2.options[select2.selectedIndex].text === tableName[i]) {
+                index = i;
+                let rowDiv = document.createElement("tr");
+                for (let i = 0; i < tableAttr[index].children.length; i++) {
+                    let td = document.createElement("td");
+                    td.className = "td";
+                    td.innerHTML = div1.children[i].value;
+                    rowDiv.appendChild(td);
+                    rowEle.push(td);
+                }
+                rowAttr[index].push(rowEle);
+                rowEle = [];
+                table.appendChild(rowDiv);
+
+            }
         }
     }
+
 }
 
 function deleteRow() {

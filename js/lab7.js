@@ -22,6 +22,8 @@ function cover() {
 }
 
 function createTable() {
+    div1.innerHTML = "";
+    div2.innerHTML = "";
     bt.style.display = "none";
     input1.style.display = "inline";
     input2.style.display = "inline";
@@ -59,11 +61,15 @@ function achieveInput2() {
 function commitTable() {
     cover();
 
+    let empty = false;
+    for(let x = 0;x < div2.children.length;x ++){
+        empty = empty || (div2.children[x].value !== "");
+    }
+
     if(input1.value.length === 0){
         input1.placeholder = "Table Name Cannot Be Empty";
     }
-
-    else {
+    else if (empty){
         let tableDiv = document.createElement("tr");
         let option = document.createElement("option");
         option.innerHTML = input1.value;
@@ -81,6 +87,7 @@ function commitTable() {
         rowAttr.push(rowName);
         rowName = [];
     }
+
 }
 
 function addRow() {
@@ -156,6 +163,7 @@ function deleteRow() {
 
 function commitDR() {
     let num = 0;
+    
     for(let i = 0; i < tableName.length; i ++) {
         if (tableName[i] === select2.options[select2.selectedIndex].text) {
             // let n = 0;
@@ -250,6 +258,11 @@ function changeS2option() {
 
 }
 
+function changeOption() {
+    changeS1Option();
+    changeS2option();
+}
+
 function commit(){
     if(select1.options[1].selected)
         commitTable();
@@ -263,7 +276,7 @@ function commit(){
     }
 }
 
-select1.addEventListener("change",changeS1Option,false);
+select1.addEventListener("change",changeOption,false);
 input2.addEventListener("change",achieveInput2,false);
 bt.addEventListener("click",commit,false);
-select2.addEventListener("change",changeS2option,false);
+select2.addEventListener("change",changeOption,false);

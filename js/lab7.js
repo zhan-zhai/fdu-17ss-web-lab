@@ -163,12 +163,13 @@ function deleteRow() {
 
 function commitDR() {
     let num = 0;
-    
+
     for(let i = 0; i < tableName.length; i ++) {
         if (tableName[i] === select2.options[select2.selectedIndex].text) {
             // let n = 0;
             for (let j = 0; j < rowAttr[i].length; j++) {
                 num = 0;
+
                 for (let k = 0; k < tableAttr[index].children.length; k++) {
                     if (rowAttr[i][j][k].innerHTML === "" || div2.children[k].value === rowAttr[i][j][k].innerHTML) {
                         num++;
@@ -255,7 +256,6 @@ function changeS2option() {
             }
         }
     }
-
 }
 
 function changeOption() {

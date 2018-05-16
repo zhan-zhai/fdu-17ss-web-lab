@@ -47,7 +47,7 @@ function outputPostRow($number)  {
     }
 
     echo "<div class=\"row\">
-        <div class=\"col-md-4\">" , generateLink('post.php?id=1','<img src="images/'.$thumb.'" alt="Ekklisia Agii Isidori Church" class="img-responsive"/>',''),
+        <div class=\"col-md-4\">" , generateLink('post.php?id=1','<img src="images/'.$thumb.'" alt='.$title.' class="img-responsive"/>',''),
     "</div>
            <div class=\"col-md-8\">
              <h2>$title</h2>

@@ -41,9 +41,19 @@ include 'travel-data.inc.php';
               /* you will need to fill this place with appropriate PHP */
               /* hint: use array and loop */
               //the next line is an example
-              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a> 
-
-
+              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a>
+              function generateLink($url, $label) {
+                  $link = '<a href="' . $url . '" class="btn btn-default">';
+                  $link .= $label;
+                  $link .= '</a>';
+                  echo $link;
+              }
+              generateLink("list.php?country=Canada",$countries["CA"]);
+              generateLink("list.php?country=Germany",$countries["DE"]);
+              generateLink("list.php?country=Greece",$countries["GR"]);
+              generateLink("list.php?country=Italy",$countries["IT"]);
+              generateLink("list.php?country=United Kingdom",$countries["GB"]);
+              generateLink("list.php?country=United States",$countries["US"]);
               ?>
                      
         </div>               
@@ -57,8 +67,35 @@ include 'travel-data.inc.php';
           /* hint: use array and loop */
           //the next lines are one of the elements
           //you need to fill the elements with data provided
-
-
+            function generatePhoto($id){
+                include("travel-data.inc.php");
+                echo "<li><a href=\"detail.php?id={$id}\"  class=\"img-responsive\">
+                        <img src=\"images/square/{$images[$id]["path"]}\" alt=\"{$images[$id]["title"]}\">
+                        <div class='caption'>
+                            <div class='blur'></div>
+                            <div class='caption-text'>
+                                <h1>{$images[$id]["title"]}</h1>
+                            </div>
+                        </div>
+                        </a>
+                        </li>";
+            }
+            generatePhoto("22");
+            generatePhoto("54");
+            generatePhoto("7");
+            generatePhoto("19");
+            generatePhoto("46");
+          generatePhoto("6");
+          generatePhoto("60");
+          generatePhoto("58");
+          generatePhoto("75");
+          generatePhoto("77");
+          generatePhoto("27");
+          generatePhoto("2");
+          generatePhoto("24");
+          generatePhoto("13");
+          generatePhoto("101");
+          generatePhoto("102");
    //        <li>
    //              <a href="detail.php?id=22" class="img-responsive">
    //              	<img src="images/square/6114850721.jpg" alt="View of Cologne">

@@ -3,6 +3,12 @@
 
 //****** Hint ******
 //connect database and fetch data here
+@
+$db = new mysqli('localhost','root','','travel');
+
+$sql1 = "SELECT* FROM Continents";
+$sql2 = "SELECT* FROM Countries";
+$sql3 = "SELECT* FROM ImageDetails";
 
 
 ?>
@@ -47,7 +53,10 @@
                 //****** Hint ******
                 //display the list of continents
 
-                while($row = $result->fetch_assoc()) {
+
+                $result1 = $db ->query($sql1);
+
+                while($row = $result1->fetch_assoc()) {
                   echo '<option value=' . $row['ContinentCode'] . '>' . $row['ContinentName'] . '</option>';
                 }
 
@@ -60,11 +69,16 @@
                 //Fill this place
 
                 //****** Hint ******
-                /* display list of countries */ 
+                /* display list of countries */
+
+                $result2 = $db ->query($sql2);
+                while ($col = $result2->fetch_assoc()){
+                    echo '<option value=' . $col['ISO'] . '>' . $col['CountryName'] . '</option>';
+                }
                 ?>
               </select>    
               <input type="text"  placeholder="Search title" class="form-control" name=title>
-              <button type="submit" class="btn btn-primary">Filter</button>
+              <button type="submit" class="btn btn-primary" name="filter">Filter</button>
               </div>
             </form>
 
@@ -75,7 +89,105 @@
 		<ul class="caption-style-2">
             <?php 
             //Fill this place
+            $img = $select1 = $select2 = $input = "";
+            $result3 = $db ->query($sql3);
 
+            function displayImages(){
+                global $result3;
+                while ($img = $result3->fetch_assoc()){
+
+                    echo "<li>
+              <a href=\"detail.php?id={$img['ImageID']}\" class=\"img-responsive\">
+                <img src=\"images/square-medium/{$img['Path']}\" alt=\"{$img['Title']}\">
+                <div class='caption'>
+                  <div class='blur'></div>
+                  <div class='caption-text'>
+                    <p>".$img['Title']."</p>
+                  </div>
+                </div>
+              </a>
+            </li>";
+                }
+
+            }
+            if(!(isset($_GET['filter']))){
+                displayImages();
+            }
+
+            if(isset($_GET['filter'])){
+
+                $select1 = $_GET['continent'];
+                $select2 = $_GET['country'];
+                $input = $_GET['title'];
+
+                if($select1 == '0' && $select2 == '0' && $input == '') {
+                    echo "";
+                }
+
+                elseif (!($select1 == '0')){
+                    while ($img = $result3->fetch_assoc()){
+
+                        if($img['ContinentCode'] == $select1 && ($img['CountryCodeISO'] == $select2 || $select2 == '0') && ( $input == '' || $input == $img['Title'])){
+                           echo "<li>
+              <a href=\"detail.php?id={$img['ImageID']}\" class=\"img-responsive\">
+                <img src=\"images/square-medium/{$img['Path']}\" alt=\"{$img['Title']}\">
+                <div class='caption'>
+                  <div class='blur'></div>
+                  <div class='caption-text'>
+                    <p>".$img['Title']."</p>
+                  </div>
+                </div>
+              </a>
+            </li>";
+                        }
+
+                    }
+                }
+
+                elseif (!($select2 == '0')){
+
+                    while ($img = $result3->fetch_assoc()){
+
+                        if($img['CountryCodeISO'] == $select2 && ($select1 == '0' || $img['ContinentCode'] == $select1) && ($input == '' || $input == $img['Title'])){
+
+                            echo "<li>
+              <a href=\"detail.php?id={$img['ImageID']}\" class=\"img-responsive\">
+                <img src=\"images/square-medium/{$img['Path']}\" alt=\"{$img['Title']}\">
+                <div class='caption'>
+                  <div class='blur'></div>
+                  <div class='caption-text'>
+                    <p>".$img['Title']."</p>
+                  </div>
+                </div>
+              </a>
+            </li>";
+                        }
+
+                    }
+                }
+                elseif (!($input == '')){
+                    while ($img = $result3->fetch_assoc()){
+                        if(($img['CountryCodeISO'] == $select2 || $select2 == '0') && ($select1 == '0' || $img['ContinentCode'] == $select1) &&  $input == $img['Title']){
+                            echo "<li>
+              <a href=\"detail.php?id={$img['ImageID']}\" class=\"img-responsive\">
+                <img src=\"images/square-medium/{$img['Path']}\" alt=\"{$img['Title']}\">
+                <div class='caption'>
+                  <div class='blur'></div>
+                  <div class='caption-text'>
+                    <p>".$img['Title']."</p>
+                  </div>
+                </div>
+              </a>
+            </li>";
+                        }
+
+                    }
+                }
+            }
+//                      if($select1 = 'Select Continent' && $select2 = 'Select Country' && $input = ''){
+            //            $select1 = $_GET['continent'];
+            ////            $select2 = $_GET['country'];
+            ////            $input = $_GET['title'];
             //****** Hint ******
             /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data
             <li>
@@ -89,7 +201,8 @@
                 </div>
               </a>
             </li>        
-            */ 
+            */
+
             ?>
        </ul>       
 

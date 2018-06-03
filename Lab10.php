@@ -121,7 +121,7 @@ $sql3 = "SELECT* FROM ImageDetails";
                 $input = $_GET['title'];
 
                 if($select1 == '0' && $select2 == '0' && $input == '') {
-                    echo "";
+                    displayImages();
                 }
 
                 elseif (!($select1 == '0')){
